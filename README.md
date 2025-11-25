@@ -139,11 +139,13 @@ stages {
         }
     }
 }  
-} ```
+}
+```
 
 ☸️ Kubernetes Deployment (deploy.yaml)
 
-``` apiVersion: apps/v1
+```
+apiVersion: apps/v1
 kind: Deployment
 metadata:
 name: my-deploy-app
