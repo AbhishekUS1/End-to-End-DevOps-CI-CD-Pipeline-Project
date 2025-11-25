@@ -1,14 +1,14 @@
-peline {
+pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'abhishek397/test-dev:latest'
+        DOCKER_IMAGE = 'your-dockerhub-username/test-dev:latest'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/AbhishekUS1/scroll-web.git'
+                git 'https://github.com/<your-username>/scroll-web.git'
             }
         }
 
