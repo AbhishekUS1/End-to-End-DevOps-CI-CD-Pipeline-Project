@@ -1,4 +1,4 @@
-```🚀 End-to-End DevOps CI/CD Pipeline Project
+🚀 End-to-End DevOps CI/CD Pipeline Project
 Terraform | Jenkins | Docker | Kubernetes (MicroK8s) | AWS EC2 | GitHub
 📌 Project Overview
 
@@ -220,4 +220,4 @@ Use EKS instead of MicroK8s
 🏁 Conclusion
 
 This project demonstrates a real-world DevOps CI/CD pipeline using industry-standard tools and practices.
-It is a great example of automation, containerization, orchestration, and cloud infrastructure provisioning.```
+It is a great example of automation, containerization, orchestration, and cloud infrastructure provisioning.
