@@ -191,7 +191,7 @@ curl http://localhost:30326
 
 Open in your browser:
 
-http://:30326
+[http://:30326](http://<EC2_Public_IP>:30326)
 
 🧩 Troubleshooting
 
