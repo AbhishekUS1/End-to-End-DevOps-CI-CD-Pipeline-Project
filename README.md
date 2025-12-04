@@ -76,37 +76,36 @@ terraform plan
 terraform apply -auto-approve
 
 ```
+
+### Step 2: EC2 Server Setup Script
 ```hcl
-Step 2: EC2 Server Setup Script
 #!/bin/bash
 sudo yum update -y
 sudo yum install -y java-11-openjdk-devel
 ```
-```hcl
-# Jenkins
+
+### Jenkins
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo yum install -y jenkins
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
-```
-```hcl
-# Docker
+
+### Docker
 sudo yum install -y docker
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker jenkins
 sudo usermod -aG docker ec2-user
-```
-```hcl
-# MicroK8s
+
+### MicroK8s
 sudo snap install microk8s --classic
 sudo usermod -a -G microk8s ec2-user
 sudo microk8s status --wait-ready
 sudo microk8s enable dns registry dashboard
-```
 
-# kubectl
+
+### kubectl
 sudo snap install kubectl --classic
 
 echo "alias kubectl='microk8s kubectl'" >> ~/.bashrc
@@ -115,7 +114,7 @@ source ~/.bashrc
 echo "Jenkins Initial Admin Password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
-Step 3: Dockerfile
+### Step 3: Dockerfile
 FROM nginx:alpine
 LABEL maintainer="Your Name <your.email@example.com>"
 LABEL version="1.0"
@@ -131,7 +130,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 
 CMD ["nginx", "-g", "daemon off;"]
 
-Step 4: Jenkins Pipeline (Declarative)
+### Step 4: Jenkins Pipeline (Declarative)
 pipeline {
     agent any
 
@@ -189,7 +188,7 @@ pipeline {
     }
 }
 
-Step 5: Kubernetes Deployment (deploy.yaml)
+### Step 5: Kubernetes Deployment (deploy.yaml)
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -230,26 +229,26 @@ spec:
     targetPort: 80
     nodePort: 30326
 
-🔧 Configuration Guide
+### 🔧 Configuration Guide
 AWS CLI
 aws configure
 
-MicroK8s Access
+###MicroK8s Access
 microk8s config > ~/.kube/config
 kubectl get nodes
 kubectl get pods -A
 
-📊 Monitoring & Logging
+### 📊 Monitoring & Logging
 kubectl logs -f deployment/scroll-web-deployment -n scroll-web
 kubectl get pods -n scroll-web -w
 kubectl describe service scroll-web-service -n scroll-web
 
-🔗 Access Application
+### 🔗 Access Application
 Access Type	URL
 Local	http://localhost:30326
 Remote	http://<EC2_PUBLIC_IP>:30326
 Kubernetes Dashboard	microk8s dashboard-proxy
-🎯 Conclusion
+ ### 🎯 Conclusion
 
 This project showcases a modern DevOps workflow integrating:
 
