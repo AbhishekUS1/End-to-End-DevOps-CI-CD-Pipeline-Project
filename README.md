@@ -45,9 +45,7 @@ Terraform (Infrastructure)           MicroK8s (Orchestration)
 
 📁 Project Structure
 --------------------
-
-text
-
+"""
 scroll-web/
 ├── infrastructure/
 │   ├── main.tf           # Terraform configuration
@@ -61,6 +59,7 @@ scroll-web/
 │   └── deploy.yaml       # Kubernetes deployment manifest
 ├── Jenkinsfile           # Jenkins pipeline definition
 └── README.md            # Project documentation
+"""
 
 🚀 Quick Start Guide
 --------------------
