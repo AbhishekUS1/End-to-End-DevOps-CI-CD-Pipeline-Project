@@ -66,13 +66,15 @@ output "jenkins_public_ip" {
 output "jenkins_url" {
   value = "http://${aws_instance.jenkins_server.public_ip}:8080"
 }
-
+###
+### **main.tf**
 Apply Terraform
 cd infrastructure/
 terraform init
 terraform validate
 terraform plan
 terraform apply -auto-approve
+###
 ```
 ```hcl
 Step 2: EC2 Server Setup Script
