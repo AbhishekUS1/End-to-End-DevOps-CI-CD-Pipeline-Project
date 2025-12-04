@@ -66,10 +66,9 @@ output "jenkins_public_ip" {
 output "jenkins_url" {
   value = "http://${aws_instance.jenkins_server.public_ip}:8080"
 }
-###
-### **main.tf**
-Apply Terraform
-cd infrastructure/
+```
+### Apply Terraform
+```hclcd infrastructure/
 terraform init
 terraform validate
 terraform plan
@@ -85,18 +84,20 @@ sudo yum install -y java-11-openjdk-devel
 ```
 
 ### Jenkins
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+```hcl sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo yum install -y jenkins
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
+```
 
 ### Docker
-sudo yum install -y docker
+```hcl sudo yum install -y docker
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker jenkins
 sudo usermod -aG docker ec2-user
+```
 
 ### MicroK8s
 sudo snap install microk8s --classic
