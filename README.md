@@ -66,12 +66,12 @@ output "jenkins_url" {
 }
 ```
 ### Apply Terraform
-```hclcd infrastructure/
+```hcl
+cd infrastructure/
 terraform init
 terraform validate
 terraform plan
 terraform apply -auto-approve
-
 ```
 
 ### Step 2: EC2 Server Setup Script
