@@ -100,13 +100,15 @@ sudo usermod -aG docker ec2-user
 ```
 
 ### MicroK8s
+```hcl
 sudo snap install microk8s --classic
 sudo usermod -a -G microk8s ec2-user
 sudo microk8s status --wait-ready
 sudo microk8s enable dns registry dashboard
-
+```
 
 ### kubectl
+```hcl
 sudo snap install kubectl --classic
 
 echo "alias kubectl='microk8s kubectl'" >> ~/.bashrc
@@ -114,8 +116,9 @@ source ~/.bashrc
 
 echo "Jenkins Initial Admin Password:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-
+```
 ### Step 3: Dockerfile
+```hcl
 FROM nginx:alpine
 LABEL maintainer="Your Name <your.email@example.com>"
 LABEL version="1.0"
@@ -130,8 +133,9 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD curl -f http://localhost/ || exit 1
 
 CMD ["nginx", "-g", "daemon off;"]
-
+```
 ### Step 4: Jenkins Pipeline (Declarative)
+```hcl
 pipeline {
     agent any
 
@@ -188,8 +192,9 @@ pipeline {
         }
     }
 }
-
+```
 ### Step 5: Kubernetes Deployment (deploy.yaml)
+```hcl
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -229,27 +234,33 @@ spec:
   - port: 80
     targetPort: 80
     nodePort: 30326
-
+```
 ### 🔧 Configuration Guide
+```hcl
 AWS CLI
 aws configure
-
+```
 ###MicroK8s Access
+```hcl
 microk8s config > ~/.kube/config
 kubectl get nodes
 kubectl get pods -A
-
+```
 ### 📊 Monitoring & Logging
+```hcl
 kubectl logs -f deployment/scroll-web-deployment -n scroll-web
 kubectl get pods -n scroll-web -w
 kubectl describe service scroll-web-service -n scroll-web
+```
 
 ### 🔗 Access Application
-Access Type	URL
+```hcl
+
 Local	http://localhost:30326
-Remote	http://<EC2_PUBLIC_IP>:30326
-Kubernetes Dashboard	microk8s dashboard-proxy
- ### 🎯 Conclusion
+Remote Access: http://<EC2_PUBLIC_IP>:30326
+Kubernetes Dashboard:	microk8s dashboard-proxy
+```
+### 🎯 Conclusion
 
 This project showcases a modern DevOps workflow integrating:
 
