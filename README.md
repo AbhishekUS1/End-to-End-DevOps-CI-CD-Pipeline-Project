@@ -256,7 +256,7 @@ kubectl describe service scroll-web-service -n scroll-web
 ### 🔗 Access Application
 ```hcl
 
-Local	http://localhost:30326
+Local	Access: http://localhost:30326
 Remote Access: http://<EC2_PUBLIC_IP>:30326
 Kubernetes Dashboard:	microk8s dashboard-proxy
 ```
