@@ -1,14 +1,5 @@
 End-to-End CI/CD Pipeline for Containerized Web Application
 ===========================================================
-
-<https://img.shields.io/badge/build-passing-brightgreen>\
-<https://img.shields.io/badge/terraform-1.x-623CE4?logo=terraform>\
-<https://img.shields.io/badge/AWS-EC2-FF9900?logo=amazonaws>\
-<https://img.shields.io/badge/Jenkins-D24939?logo=jenkins>\
-<https://img.shields.io/badge/Docker-2496ED?logo=docker>\
-<https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes>\
-<https://img.shields.io/badge/license-MIT-blue>
-
 🚀 Project Overview
 -------------------
 
