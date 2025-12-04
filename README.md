@@ -73,31 +73,36 @@ terraform init
 terraform validate
 terraform plan
 terraform apply -auto-approve
-
+```
+```hcl
 Step 2: EC2 Server Setup Script
 #!/bin/bash
 sudo yum update -y
 sudo yum install -y java-11-openjdk-devel
-
+```
+```hcl
 # Jenkins
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 sudo yum install -y jenkins
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
-
+```
+```hcl
 # Docker
 sudo yum install -y docker
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker jenkins
 sudo usermod -aG docker ec2-user
-
+```
+```hcl
 # MicroK8s
 sudo snap install microk8s --classic
 sudo usermod -a -G microk8s ec2-user
 sudo microk8s status --wait-ready
 sudo microk8s enable dns registry dashboard
+```
 
 # kubectl
 sudo snap install kubectl --classic
