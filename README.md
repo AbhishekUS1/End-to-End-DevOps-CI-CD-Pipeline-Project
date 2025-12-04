@@ -261,7 +261,7 @@ Remote Access: http://<EC2_PUBLIC_IP>:30326
 Kubernetes Dashboard:	microk8s dashboard-proxy
 ```
 ### 🎯 Conclusion
-
+```hcl
 This project showcases a modern DevOps workflow integrating:
 
 Infrastructure automation
@@ -271,3 +271,4 @@ CI/CD orchestration
 Containerization & registry management
 
 Kubernetes deployment automation
+```
