@@ -17,13 +17,11 @@ This project demonstrates modern DevOps practices including **Infrastructure as 
 ## 🚀 Quick Start Guide
 
 ### 🔧 Prerequisites
-
 - AWS Account with IAM credentials
 - Terraform ≥ 1.0
 - AWS CLI configured
 - DockerHub account
 - GitHub repository access
-
 ---
 
 ## Step 1: Infrastructure Provisioning (Terraform)
