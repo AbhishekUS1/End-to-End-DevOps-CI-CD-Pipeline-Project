@@ -67,7 +67,6 @@ output "jenkins_url" {
 ```
 ### Apply Terraform
 ```hcl
-cd infrastructure/
 terraform init
 terraform validate
 terraform plan
