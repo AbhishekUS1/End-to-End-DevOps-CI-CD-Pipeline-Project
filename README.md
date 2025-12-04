@@ -1,6 +1,11 @@
-🚀 End-to-End CI/CD Pipeline for Kubernetes Deployment Using AWS, Terraform, Jenkins, Docker & MicroK8s  
-A complete end-to-end CI/CD pipeline for deploying a web application on Kubernetes using **AWS**, **Terraform**, **Jenkins**, **Docker**, **DockerHub**, and **MicroK8s**.  
-This project demonstrates modern DevOps practices including **Infrastructure as Code (IaC)**, **containerization**, **continuous integration**, and **automated deployment**.
+## 🚀 **End-to-End CI/CD Pipeline for Kubernetes Deployment Using AWS, Terraform, Jenkins, Docker & MicroK8s**
+
+A **complete end-to-end CI/CD pipeline** for deploying a web application on **Kubernetes** using  
+**AWS**, **Terraform**, **Jenkins**, **Docker**, **DockerHub**, and **MicroK8s**.
+
+This project demonstrates modern **DevOps practices** including  
+**Infrastructure as Code (IaC)**, **containerization**, **continuous integration**, and **automated deployment**.
+
 
 ## ✨ Key Features
 
