@@ -8,4 +8,5 @@ echo "" >> system_report.txt
 echo "System Uptime:" >> system_report.txt 
 uptime >> system_report.txt 
 echo "System report generated: system_report.txt"
+echo "Run hello world"
 echo "Thank you"
